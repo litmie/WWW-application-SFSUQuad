@@ -15,13 +15,15 @@
   <link rel="icon" href="img/icon.ico">
 </head>
 
-<!-- Navbar with logo, searchbar(TODO), and menu-->
+<!-- NAVBAR (logo, searchbar and menu)-->
   <body>
       <div class="header">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="main-nav" >
+          <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="main-nav" >
           <div class="container">
+
             <!-- Logo -->
-            <img src="img/SFSU_logo.png" href="index.html" class="navbar-brand p-0" style="height: 100px"></img> 
+            <img src="img/SFSU_logo.png" href="index.html" class="navbar-brand p-0"></img> 
+
             <!-- Search bar--> 
             <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
                 <div class="input-group" >
@@ -31,34 +33,39 @@
                     <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2" class="form-control border-0 bg-light">
                 </div>
             </div>
-            <!-- Hamburger (instead of menu, for smaller screens) -->
+
+            <!-- "Sell" orange button -->
+            <button type="button" id="sell_button" class="btn btn-warning" >Sell</button>
+            
+            <!-- "Hamburger" icon (for smaller screens) -->
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Menu Items -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a href="index.html" class="nav-link">Home</a>
-                </li>
+                    <a href="index.html" class="nav-link">Home</a>
+                  </li>
                 <li class="nav-item">
-                  <a href="about.html" class="nav-link">Our Team</a>
+                  <a href="about.html" class="nav-link">Team</a>
                 </li>
               </ul>
             </div>
+
           </div>
         </nav>
       </div>
-    <!--
-    <div class="nothingness" style="padding: 30px">
-      <h1></h1>
-    </div> 
-        -->
-    <!-- HOME SECTION -->
+    <!-- <div class="nothingness" style="padding: 30px"><h1></h1></div> -->
+
+
+    <!-- CAROUSEL SECTION -->
       <section id="showcase" >
-        
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
               <div class="carousel-item carousel-image-1 active">
+                <!-- 'dark-verlay' makes background image a bit darker so user can see foreground text clearer -->
                 <div class="dark-overlay">
                   <div class="container">
                     <div class="carousel-caption  text-right mb-5">
@@ -80,10 +87,6 @@
         </div>
       </div>
       </section>
-
-    <!-- FOOTER 
-    <footer id="main-footer">    
-    </footer>-->
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
       crossorigin="anonymous"></script>

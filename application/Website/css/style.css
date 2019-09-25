@@ -1,35 +1,47 @@
-body {
-  background: #50c5ff;
-  color:#000;
-}
-
+/* Navbar */
 .navbar {
-  border-bottom: #008ed6 3px solid;
+  border-bottom: #da7c01 3px solid;
   font-size: 1.25rem;
   color: #fff;
   padding: 0.2rem 0.2rem;
 }
 
-.card-block {
+.navbar-brand{
+  height: 100px;
+}
+
+.navbar-toggler{
+  margin: 15px;
+}
+
+/* Search bar */
+.rounded-pill {
+  width: 55%; 
   margin: 20px;
 }
 
+#sell_button{
+  width: 10%;
+}
+
+
+.card{
+  margin: 15px;
+}
+
+.card-block {
+  margin: 15%;
+}
+
+body {
+  background-color: black;
+}
 .header {
   position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
   background-color: #f1f1f1;
-}
-
-
-.dark-spacer { 
-    height: 50px;  
-    width:100%;  
-    overflow:hidden;
-     background: darkslategrey; 
-     position: absolute;
-     padding: 0;
 }
 
 /* Style inputs */
@@ -42,6 +54,16 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
+
+.btn{
+  padding: 15px;
+}
+
+#sell_button{
+  margin: 15px;
+  size: 
+}
+
 
 input[type=submit] {
   background-color: rgb(255, 93, 44);
@@ -81,10 +103,6 @@ h2 {
   text-align: center;
 }
 
-.rounded-pill {
-  width: 60%; 
-  margin: 10px;
-}
 
 /*  
 *  Carousel  
@@ -93,7 +111,7 @@ h2 {
   margin-top: 0px;
 }
 .carousel-item {
-  height: 450px;
+  height: 500px;
 }
 .carousel-image-1 {
   background: url('../img/front_page_banner.jpg');

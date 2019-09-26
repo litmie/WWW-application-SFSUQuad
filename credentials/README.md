@@ -13,8 +13,10 @@
     # How to SSH our server
     1. Open incognito tab in Google Chrome
     2. Log in into Google account using following credentials: 
-        email: csc648.02@gmail.com
-        pass:  2019team08
+    
+            email: csc648.02@gmail.com
+            pass:  2019team08
+        
     3. Go to https://cloud.google.com/
     4. Press 'Console' button on the top right corner
     5. Once you're in a console, go to 'Compute Engine' and you should see our instance with 34.66.133.23 IP

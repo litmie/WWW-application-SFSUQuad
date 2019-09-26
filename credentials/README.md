@@ -8,9 +8,8 @@
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
 1. Server URL or IP: http://34.66.133.23
-2. SSH username
-3. SSH password or key.
-    # How to SSH our server
+2. SSH username 3. SSH password or key. ->
+    ## How to SSH our server
     1. Open incognito tab in Google Chrome
     2. Log in into Google account using following credentials: 
     

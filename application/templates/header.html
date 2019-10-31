@@ -1,27 +1,39 @@
-<div class="header">
+<div class="fixed-top">
     <div style="background-color: black; color: white; padding: 5px;">
         SFSU Software Engineering Project CSC 648-848, Fall 2019. For Demonstration Only
     </div>
     <!-- NAVBAR (logo, searchbar, sell-button and menu)-->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="main-nav">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="main-nav">
         <div class="container">
 
             <!-- Logo -->
-            <img src="static/SFSU_logo.png" href="index" class="navbar-brand p-0"></img>
+            <a class="btn" href="/"><img src="static/SFSU_logo.png" class="navbar-brand p-0"></a>
 
             <!-- Search bar-->
-            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                <div class="input-group">
+            <form class="col-md-7">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+                        <select class="form-control custom-select">
+                            <option value="*">All</option>
+                            <option value="0">Books</option>
+                            <option value="1">Furniture</option>
+                            <option value="2">Electronics</option>
+                            <option value="3">Supplies</option>
+                            <option value="4">TBD</option>
+                            <option value="5">TBD</option>
+                            <option value="6">TBD</option>
+                            <option value="7">TBD</option>
+                            <option value="8">TBD</option>
+                        </select>
                     </div>
-                    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2"
-                        class="form-control border-0 bg-light">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-warning">Search</button>
+                    </div>
                 </div>
-            </div>
+            </form>
 
-            <!-- "Sell" orange button -->
-            <button type="button" id="sell_button" class="btn btn-warning" style="padding: 5px;">Sell</button>
+            <a href="sell" class="btn btn-success mb-3">Sell</a>
 
             <!-- Hamburger (instead of menu, for smaller screens) -->
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -30,12 +42,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
 
                 <!-- Menu Items -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto mb-3">
                     <li class="nav-item">
-                        <a href="index" class="nav-link">Home</a>
+                        <a href="login" class="nav-link">Log In | Sign Up</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="ourTeam" class="nav-link">Our Team</a>
+                    <li>
+                        <a href="ourTeam" class="nav-link">About</a>
                     </li>
                 </ul>
             </div>
@@ -45,3 +57,6 @@
 <div class="nothingness" style="padding: 30px">
     <h1></h1>
 </div>
+<script>
+    $('input:text').attr('placeholder','Search');
+</script>

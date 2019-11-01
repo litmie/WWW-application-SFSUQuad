@@ -46,7 +46,7 @@
                         <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">Log In</a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link btn btn-outline-primary">Sign Up</a>
+                        <a href="#" class="nav-link btn btn-outline-primary" data-toggle="modal" data-target="#signupModal">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +59,8 @@
 </div>
 
 <!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -69,16 +70,54 @@
                 </button>
             </div>
             <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmail">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email" required>
+                        <small id="emailHelp" class="form-text text-muted">Email must end in '@mail.sfsu.edu'</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPw">Password</label>
+                        <input type="password" class="form-control" id="loginPw" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    $('input:text').attr('placeholder', 'Search');
-</script>
+
+<!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPw">Password</label>
+                        <input type="password" class="form-control" id="signupPw" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupRePw">Re-Enter Password</label>
+                        <input type="password" class="form-control" id="signupRePw" placeholder="Re-Enter Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

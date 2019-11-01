@@ -30,6 +30,10 @@ def kevinProfile():
 def timProfile():
     return render_template('about_team_members/about_Tim.html')
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
 @app.route('/')
 @app.route('/index')
 def index():

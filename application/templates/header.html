@@ -33,30 +33,52 @@
                 </div>
             </form>
 
-            <a href="sell" class="btn btn-success mb-3">Sell</a>
+            <a href="#" class="btn btn-success mb-3">Sell</a>
 
             <!-- Hamburger (instead of menu, for smaller screens) -->
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-
                 <!-- Menu Items -->
                 <ul class="navbar-nav ml-auto mb-3">
                     <li class="nav-item">
-                        <a href="login" class="nav-link">Log In | Sign Up</a>
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">Log In</a>
                     </li>
                     <li>
-                        <a href="ourTeam" class="nav-link">About</a>
+                        <a href="#" class="nav-link btn btn-outline-primary">Sign Up</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
+
 <div class="nothingness" style="padding: 30px">
     <h1></h1>
 </div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-    $('input:text').attr('placeholder','Search');
+    $('input:text').attr('placeholder', 'Search');
 </script>

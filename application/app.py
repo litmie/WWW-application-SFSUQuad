@@ -1,12 +1,29 @@
 #!/usr/bin/env python3
+
+################################
+#         App.py               #
+# Main website routing/control #
+# Created by Andrew Copas      #
+# Modified by:                 #
+# Emanuel Saunders(Nov 10,2019)#
+################################
+
 from flask import Flask, render_template, request, redirect
 from flaskext.mysql import MySQL
+from flask_thumbnails import Thumbnail
 
 app = Flask(__name__)
 
+# Thumbnail extension config
+thumb = Thumbnail(app)
+app.config['THUMBNAIL_MEDIA_ROOT'] = './static/user_images/'
+app.config['THUMBNAIL_MEDIA_URL'] = '/user_images/'
+app.config['THUMBNAIL_MEDIA_THUMBNAIL_ROOT'] = './static/user_images/cache'
+app.config['THUMBNAIL_MEDIA_THUMBNAIL_URL'] = '/static/user_images/cache/'
+
 # Connect to the MySQL database
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_DATABASE_USER'] = 'emanuel'
+app.config['MYSQL_DATABASE_PASSWORD'] = '42ravens'
 app.config['MYSQL_DATABASE_DB'] = 'prototypedb'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
@@ -66,21 +83,21 @@ def search():
         # all in the search box will return all the tuples
         if len(item) == 0:
             if category == "All":
-                cursor.execute("SELECT P.title, P.description, C.name FROM posts P, categories C WHERE P.category=C.cID")
+                cursor.execute("SELECT P.title, P.description, C.name, P.image FROM posts P, categories C WHERE P.category=C.cID")
                 conn.commit()
                 data = cursor.fetchall()
             else:
-                cursor.execute("SELECT P.title, P.description, C.name FROM posts P, categories C WHERE P.category = C.cID AND C.name = '%s'" %(category))
+                cursor.execute("SELECT P.title, P.description, C.name, P.image FROM posts P, categories C WHERE P.category = C.cID AND C.name = '%s'" %(category))
                 conn.commit()
                 data = cursor.fetchall()
         # search by category
         else:
             if category == "All":
-                cursor.execute("SELECT P.title, P.description, C.name FROM posts P JOIN categories C ON P.category = C.cID WHERE P.description LIKE '%%%s%%' OR P.title LIKE '%%%s%%'" %(item, item))
+                cursor.execute("SELECT P.title, P.description, C.name, P.image FROM posts P JOIN categories C ON P.category = C.cID WHERE P.description LIKE '%%%s%%' OR P.title LIKE '%%%s%%'" %(item, item))
                 conn.commit()
                 data = cursor.fetchall()
             else:
-                cursor.execute("SELECT P.title, P.description, C.name FROM posts P JOIN categories C ON P.category = C.cID WHERE C.name = '%s' AND (P.description LIKE '%%%s%%' OR P.title LIKE '%%%s%%')" %(category, item, item))
+                cursor.execute("SELECT P.title, P.description, C.name, P.image FROM posts P JOIN categories C ON P.category = C.cID WHERE C.name = '%s' AND (P.description LIKE '%%%s%%' OR P.title LIKE '%%%s%%')" %(category, item, item))
                 conn.commit()
                 data = cursor.fetchall()
             conn.close()

@@ -22,8 +22,8 @@ app.config['THUMBNAIL_MEDIA_THUMBNAIL_ROOT'] = './static/user_images/cache'
 app.config['THUMBNAIL_MEDIA_THUMBNAIL_URL'] = '/static/user_images/cache/'
 
 # Connect to the MySQL database
-app.config['MYSQL_DATABASE_USER'] = 'emanuel'
-app.config['MYSQL_DATABASE_PASSWORD'] = '42ravens'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'prototypedb'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 

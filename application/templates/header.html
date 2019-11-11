@@ -1,47 +1,125 @@
-<div class="header">
+<div class="fixed-top">
     <div style="background-color: black; color: white; padding: 5px;">
         SFSU Software Engineering Project CSC 648-848, Fall 2019. For Demonstration Only
     </div>
     <!-- NAVBAR (logo, searchbar, sell-button and menu)-->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="main-nav">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="main-nav">
         <div class="container">
 
             <!-- Logo -->
-            <img src="static/SFSU_logo.png" href="index" class="navbar-brand p-0"></img>
+            <a class="btn" href="/"><img src="static/SFSU_Quad_logo_rounded_mini.png" class="navbar-brand p-0"></a>
 
             <!-- Search bar-->
-            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-                <div class="input-group">
+            <form class="col-md-7">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="fa fa-search"></i></button>
+                        <select class="form-control custom-select">
+                            <option value="*">All</option>
+                            <option value="0">Books</option>
+                            <option value="1">Furniture</option>
+                            <option value="2">Electronics</option>
+                            <option value="3">Supplies</option>
+                            <option value="4">TBD</option>
+                            <option value="5">TBD</option>
+                            <option value="6">TBD</option>
+                            <option value="7">TBD</option>
+                            <option value="8">TBD</option>
+                        </select>
                     </div>
-                    <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon2"
-                        class="form-control border-0 bg-light">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-warning">Search</button>
+                    </div>
                 </div>
-            </div>
+            </form>
 
-            <!-- "Sell" orange button -->
-            <button type="button" id="sell_button" class="btn btn-warning" style="padding: 5px;">Sell</button>
+            <a href="#" class="btn btn-success mb-3">Sell</a>
 
             <!-- Hamburger (instead of menu, for smaller screens) -->
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-
                 <!-- Menu Items -->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto mb-3">
                     <li class="nav-item">
-                        <a href="index" class="nav-link">Home</a>
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">Log In</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="ourTeam" class="nav-link">Our Team</a>
+                    <li>
+                        <a href="#" class="nav-link btn btn-outline-primary" data-toggle="modal" data-target="#signupModal">Sign Up</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
+
 <div class="nothingness" style="padding: 30px">
     <h1></h1>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Log In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmail">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email" required>
+                        <small id="emailHelp" class="form-text text-muted">Email must end in '@mail.sfsu.edu'</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPw">Password</label>
+                        <input type="password" class="form-control" id="loginPw" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="signupEmail">Email address</label>
+                        <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPw">Password</label>
+                        <input type="password" class="form-control" id="signupPw" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupRePw">Re-Enter Password</label>
+                        <input type="password" class="form-control" id="signupRePw" placeholder="Re-Enter Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

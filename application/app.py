@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Connect to the MySQL database
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'prototypedb'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
@@ -46,6 +46,11 @@ def kevinProfile():
 @app.route('/about_Tim')
 def timProfile():
     return render_template('about_team_members/about_Tim.html')
+
+
+@app.route('/results')
+def results():
+    return render_template('results.html')
 
 
 @app.route('/', methods=['GET', 'POST'])

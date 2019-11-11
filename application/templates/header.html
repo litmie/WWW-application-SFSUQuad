@@ -1,39 +1,32 @@
-<div class="fixed-top">
+<header class="fixed-top">
     <div style="background-color: black; color: white; padding: 5px;">
         SFSU Software Engineering Project CSC 648-848, Fall 2019. For Demonstration Only
     </div>
     <!-- NAVBAR (logo, searchbar, sell-button and menu)-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="main-nav">
-        <div class="container">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="main-nav">
 
             <!-- Logo -->
-            <a class="btn" href="/"><img src="static/SFSU_Quad_logo_rounded_mini.png" class="navbar-brand p-0"></a>
+            <a class="btn" href="/"><img src="static/SFSU_Quad_logo_rounded_mini.png" class="navbar-brand p-0" width="50" height="50"></a>
 
             <!-- Search bar-->
-            <form class="col-md-7">
-                <div class="input-group mb-3">
+            <form class="col-md-7" method="post">
+                <div class="input-group">
                     <div class="input-group-prepend">
-                        <select class="form-control custom-select">
-                            <option value="*">All</option>
-                            <option value="0">Books</option>
-                            <option value="1">Furniture</option>
-                            <option value="2">Electronics</option>
-                            <option value="3">Supplies</option>
-                            <option value="4">TBD</option>
-                            <option value="5">TBD</option>
-                            <option value="6">TBD</option>
-                            <option value="7">TBD</option>
-                            <option value="8">TBD</option>
+                        <select class="form-control custom-select" name="category">
+                            {% for cat in cats %}
+                            <option> {{cat[0]}} </option>
+                            {% endfor %}
                         </select>
                     </div>
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" class="form-control" placeholder="Search" name="item">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-warning">Search</button>
                     </div>
                 </div>
             </form>
 
-            <a href="#" class="btn btn-success mb-3">Sell</a>
+            <a href="#" class="btn btn-success">Sell</a>
 
             <!-- Hamburger (instead of menu, for smaller screens) -->
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -41,22 +34,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <!-- Menu Items -->
-                <ul class="navbar-nav ml-auto mb-3">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-toggle="modal" data-target="#loginModal">Log In</a>
+                        <a href="#" class="nav-link btn btn-outline-primary" data-toggle="modal"
+                            data-target="#loginModal">Log In</a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link btn btn-outline-primary" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                        <a href="#" class="nav-link btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign Up</a>
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-</div>
-
-<div class="nothingness" style="padding: 30px">
-    <h1></h1>
-</div>
+        </nav>
+    </div>
+</header>
 
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"

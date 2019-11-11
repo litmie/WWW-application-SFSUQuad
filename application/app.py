@@ -12,15 +12,16 @@ from flask import Flask, render_template, request, redirect
 from flaskext.mysql import MySQL
 from flask_thumbnails import Thumbnail
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/var/www/html/static', static_folder='static', template_folder='templates')
 
 # Thumbnail extension config
 thumb = Thumbnail(app)
-app.config['THUMBNAIL_MEDIA_ROOT'] = './static/user_images/'
+app.config['THUMBNAIL_MEDIA_ROOT'] = '/var/www/html/static/user_images'
 app.config['THUMBNAIL_MEDIA_URL'] = '/user_images/'
-app.config['THUMBNAIL_MEDIA_THUMBNAIL_ROOT'] = './static/user_images/cache'
-app.config['THUMBNAIL_MEDIA_THUMBNAIL_URL'] = '/static/user_images/cache/'
-
+app.config['THUMBNAIL_MEDIA_THUMBNAIL_ROOT'] = '/var/www/html/static/user_images/cache'
+app.config['THUMBNAIL_MEDIA_THUMBNAIL_URL'] = '/var/www/html/static/user_images/cache/'
+app.config['THUMBNAIL_STORAGE_BACKEND'] = 'flask_thumbnails.storage_backends.FilesystemStorageBackend'
+app.config['THUMBNAIL_DEFAUL_FORMAT'] = 'JPEG'
 # Connect to the MySQL database
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
@@ -80,6 +81,7 @@ def search():
     if request.method == "POST":
         category = request.form['category']
         item = request.form['item']
+        query = item
         # all in the search box will return all the tuples
         if len(item) == 0:
             if category == "All":
@@ -101,7 +103,7 @@ def search():
                 conn.commit()
                 data = cursor.fetchall()
             conn.close()
-        return render_template('search.html', data=data, cats=cats)
+        return render_template('search.html', query=query, data=data, cats=cats)
     conn.close()
     return render_template('search.html', cats=cats)
 

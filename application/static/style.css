@@ -7,8 +7,11 @@
 }
 
 body {
-  background-color: white;
   padding-top: 8%;
+}
+
+#dashboards {
+  background-color: whitesmoke;
 }
 
 /* Create two columns that float next to eachother */

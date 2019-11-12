@@ -1,30 +1,3 @@
-/* Navbar */
-.navbar {
-  border-bottom: #da7c01 3px solid;
-  font-size: 1.25rem;
-  color: #fff;
-  padding: 0.2rem 0.2rem;
-}
-
-.navbar-brand{
-  height: 100px;
-}
-
-.navbar-toggler{
-  margin: 15px;
-}
-
-/* Search bar */
-.rounded-pill {
-  width: 55%; 
-  margin: 20px;
-}
-
-#sell_button{
-  width: 10%;
-}
-
-
 .card{
   margin: 15px;
 }
@@ -35,8 +8,8 @@
 
 body {
   background-color: black;
+  padding-top: 8%;
 }
-
 
 /* Create two columns that float next to eachother */
 .column {
